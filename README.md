@@ -9,9 +9,9 @@
 
 &nbsp;
 
-**Jasminum Nudiflorum 迎春花 - SpringBoot**
+**Jasminum Nudiflorum 迎春花 - Spring**
 
-模块：java-springboot（springboot 示例）
+模块：java-spring（spring 示例）
 
 &nbsp;
 

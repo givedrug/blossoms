@@ -12,8 +12,8 @@
     <groupId>java</groupId>
     <artifactId>jasminum_nudiflorum</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>java-springboot</name>
-    <description>java-springboot</description>
+    <name>java-spring</name>
+    <description>java-spring</description>
 
     <dependencies>
         <dependency>
