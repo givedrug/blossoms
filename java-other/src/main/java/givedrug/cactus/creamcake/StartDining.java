@@ -1,11 +1,14 @@
 package givedrug.cactus.creamcake;
 
 /**
- * @Author : wangjinjin@didiglobal.com
+ * @Author : wangjinjin
  * @Date : 2021/8/10 下午3:40
  */
 public class StartDining {
     public static void main(String[] args) {
+        /**
+         * 吃蛋糕
+         */
         Knife.getAllFiles(Knife.OUT_PATH).stream()
                 .forEach(file -> {
                     String fileName = Knife.getLastSplitString(file, "/").split("\\.")[0];

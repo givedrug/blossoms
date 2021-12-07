@@ -3,12 +3,16 @@ package givedrug.cactus.creamcake;
 import java.util.Map;
 
 /**
- * @Author : wangjinjin@didiglobal.com
+ * @Author : wangjinjin
  * @Date : 2021/8/10 下午3:40
  */
 public class StartCook {
 
     public static void main(String[] args) {
+        /**
+         * 制作奶油蛋糕
+         * 保证奶油和蛋糕数量一致
+         */
         Map<String, String> cp = Knife.getCP();
         cp.entrySet().stream().forEach(entry -> {
             String cream = entry.getKey();
