@@ -3,4 +3,6 @@
 
 <template>
 
+  Hello
+
 </template>
