@@ -1,0 +1,36 @@
+[
+  {
+    "type_name": "类型1",
+    "url_list": [
+      {
+        "url_name": "Google",
+        "url_link": "http://www.google.com"
+      },
+      {
+        "url_name": "Baidu",
+        "url_link": "http://www.baidu.com"
+      },
+      {
+        "url_name": "SoSo",
+        "url_link": "http://www.SoSo.com"
+      }
+    ]
+  },
+  {
+    "type_name": "类型2",
+    "url_list": [
+      {
+        "url_name": "Google",
+        "url_link": "http://www.google.com"
+      },
+      {
+        "url_name": "Baidu",
+        "url_link": "http://www.baidu.com"
+      },
+      {
+        "url_name": "SoSo",
+        "url_link": "http://www.SoSo.com"
+      }
+    ]
+  }
+]
