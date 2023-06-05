@@ -4,15 +4,18 @@
     "url_list": [
       {
         "url_name": "Google",
-        "url_link": "http://www.google.com"
+        "url_link": "http://www.google.com",
+        "url_count": 1
       },
       {
         "url_name": "Baidu",
-        "url_link": "http://www.baidu.com"
+        "url_link": "http://www.baidu.com",
+        "url_count": 2
       },
       {
         "url_name": "SoSo",
-        "url_link": "http://www.SoSo.com"
+        "url_link": "http://www.SoSo.com",
+        "url_count": 4
       }
     ]
   },
@@ -21,15 +24,18 @@
     "url_list": [
       {
         "url_name": "Google",
-        "url_link": "http://www.google.com"
+        "url_link": "http://www.google.com",
+        "url_count": 5
       },
       {
         "url_name": "Baidu",
-        "url_link": "http://www.baidu.com"
+        "url_link": "http://www.baidu.com",
+        "url_count": 4
       },
       {
         "url_name": "SoSo",
-        "url_link": "http://www.SoSo.com"
+        "url_link": "http://www.SoSo.com",
+        "url_count": 2
       }
     ]
   }
