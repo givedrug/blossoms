@@ -1,26 +1,28 @@
 <script lang="ts">
-import type {PropType} from 'vue'
 import {defineComponent} from 'vue'
 import url_json from '../config/url.json'
 
+// 首页每种类型展示url条数
+const frequent_number = 2
+
 export default defineComponent({
-  props: {
-    url_home: {
-      type: Object as PropType<UrlJson>,
-      required: true
-    }
-  },
   data() {
     return {
-      url_home: ''
+      url_home: [] as UrlJson
     }
   },
   methods: {
+    // 获取每种类型前frequent_number个最常用url，作为常用网址
     getFrequentUrl(url_json: UrlJson): UrlJson {
+      let url_frequent: TypeBlock[] = []
       Object.entries(url_json).forEach(([k, v]) => {
-        console.log(k);
-      });
-      return url_json
+        let type_block: TypeBlock = <TypeBlock>{}
+        type_block.type_name = v.type_name
+        let url_list_sorted: UrlBlock[] = v.url_list.sort((a, b) => b.url_count - a.url_count);
+        type_block.url_list = url_list_sorted.slice(0, frequent_number)
+        url_frequent.push(type_block)
+      })
+      return url_frequent
     }
   },
   mounted() {
@@ -30,12 +32,22 @@ export default defineComponent({
 </script>
 
 <template>
-  <div v-for="type_block in url_home">
-    {{ type_block.type_name }}
+  <div class="url_frequent">
+    <div class="type_block" v-for="type_block in url_home">
+      <div class="type_name">
+        {{ type_block.type_name }}
+      </div>
+      <div class="url_list">
+        <div v-for="url_block in type_block.url_list">
+          <a :href="url_block.url_link">{{ url_block.url_name }}</a>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <p>
-    <router-link to="/">Go to Home</router-link>
-    <router-link to="/all">Go to All</router-link>
-  </p>
+  <div class="go_to_all">
+    <div v-for="type_block in url_home">
+      <router-link to="/all">{{ type_block.type_name }}</router-link>
+    </div>
+  </div>
 </template>
