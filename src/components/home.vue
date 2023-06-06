@@ -16,10 +16,10 @@ export default defineComponent({
     }
   },
   methods: {
-    getFrequentUrl(url_json) {
-      url_json.forEach((type_block) => {
-        console.log(type_block)
-      })
+    getFrequentUrl(url_json: UrlJson): UrlJson {
+      Object.entries(url_json).forEach(([k, v]) => {
+        console.log(k);
+      });
       return url_json
     }
   },
