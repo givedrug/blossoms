@@ -3,7 +3,7 @@ import {defineComponent} from 'vue'
 import url_json from '../config/url.json'
 
 // 首页每种类型展示url条数
-const frequent_number = 2
+const frequent_number = 7
 
 export default defineComponent({
   data() {
@@ -18,6 +18,7 @@ export default defineComponent({
       Object.entries(url_json).forEach(([k, v]) => {
         let type_block: TypeBlock = <TypeBlock>{}
         type_block.type_name = v.type_name
+        // 按点击次数排序
         let url_list_sorted: UrlBlock[] = v.url_list.sort((a, b) => b.url_count - a.url_count);
         type_block.url_list = url_list_sorted.slice(0, frequent_number)
         url_frequent.push(type_block)
@@ -32,22 +33,24 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="url_frequent">
-    <div class="type_block" v-for="type_block in url_home">
-      <div class="type_name">
-        {{ type_block.type_name }}
-      </div>
-      <div class="url_list">
-        <div v-for="url_block in type_block.url_list">
-          <a :href="url_block.url_link">{{ url_block.url_name }}</a>
+  <div class="url_block">
+    <div class="url_frequent">
+      <div class="type_block" v-for="type_block in url_home">
+        <div class="type_name">
+          {{ type_block.type_name }}
+        </div>
+        <div class="url_list">
+          <div v-for="url_block in type_block.url_list">
+            <a :href="url_block.url_link">{{ url_block.url_name }}</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="go_to_all">
-    <div v-for="type_block in url_home">
-      <router-link to="/all">{{ type_block.type_name }}</router-link>
+    <div class="go_to_all">
+      <div v-for="type_block in url_home">
+        <router-link to="/all">{{ type_block.type_name }}</router-link>
+      </div>
     </div>
   </div>
 </template>
