@@ -1,6 +1,7 @@
 [
   {
     "type_name": "文档手册",
+    "type_icon": "type_icon/book.svg",
     "url_list": [
       {
         "url_name": "Vue文档",
@@ -28,7 +29,7 @@
         "url_count": 9
       },
       {
-        "url_name": "mybatis-plus文档",
+        "url_name": "mybatis-plus文档333333",
         "url_link": "https://mybatis.plus/guide/",
         "url_count": 4
       },
@@ -56,6 +57,7 @@
   },
   {
     "type_name": "社区论坛",
+    "type_icon": "type_icon/broadcast.svg",
     "url_list": [
       {
         "url_name": "数学研发论坛",

@@ -28,7 +28,7 @@ export default {
 
 <style>
 body {
-  background-image: url("/background.jpg");
+  background-image: url("/00.jpg");
   background-size: 1920px;
   background-repeat: no-repeat;
   background-attachment: fixed;

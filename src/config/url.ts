@@ -1,6 +1,7 @@
 interface UrlBlock {
     url_name: string,
     url_link: string,
+    url_link_icon: string,
     url_count?: number
 }
 
@@ -10,6 +11,7 @@ interface UrlList {
 
 interface TypeBlock {
     type_name: string
+    type_icon: string
     url_list: UrlList
 }
 

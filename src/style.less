@@ -1,32 +1,111 @@
-.url_block {
-  width: 800px;
-  height: 300px;
-  display: block;
+@height: 60px * 2;
+
+.url_frequent {
+  box-sizing: border-box;
+  width: 77%;
+  height: @height;
+  display: flex;
+  flex-direction: column;
   margin: 300px auto;
   // 半透明
-  background-color: #EBEBEB;
-  opacity: 0.5;
+  background: rgba(100, 100, 100, 0.2);
   // 圆角
   border: 1px;
   border-radius: 4px;
+
+  .all_type_block {
+    margin: 10px;
+
+    .one_type_block {
+      height: 35px;
+      display: flex;
+      flex-direction: row;
+      margin: 10px;
+
+      .type_piece {
+        box-sizing: border-box;
+        width: 10%;
+
+        .type_piece_a {
+          height: 100%;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          background: rgba(10, 12, 15, 0.1);
+          margin: 0 3px 0 3px;
+          border: 1px;
+          border-radius: 4px;
+
+          .type_icon {
+            display: flex;
+            align-items: center;
+            margin: 0 3px 0 7px;
+          }
+
+          .type_name {
+            display: flex;
+            align-items: center;
+            margin: 0 3px 0 7px;
+          }
+        }
+      }
+
+      .url_list {
+        box-sizing: border-box;
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0 3px 0 3px;
+
+        .url_piece {
+          width: 13%;
+          background: rgba(10, 12, 15, 0.1);
+          margin: 0 3px 0 3px;
+          border: 1px;
+          border-radius: 4px;
+          display: flex;
+          align-items: center;
+
+          .url_piece_a {
+            display: flex;
+            align-items: center;
+
+            .url_icon {
+              display: flex;
+              align-items: center;
+              margin: 0 3px 0 7px;
+            }
+
+            .url_name {
+              width: 120px;
+              display: flex;
+              align-items: center;
+              margin: 0 3px 0 4px;
+
+              .url_name_span {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
-.url_frequent {
-  display: flex;
-  flex-direction: column;
+a {
+  text-decoration: none;
+  color: #000000;
+
+  &:hover {
+    font-weight: bold;
+  }
 }
 
-.type_block {
-  display: flex;
-  flex-direction: row;
-}
-
-.url_list {
-  display: flex;
-  flex-direction: row;
-}
-
-.go_to_all {
-  display: flex;
-  flex-direction: row;
+.router-link-active {
+  text-decoration: none;
 }
