@@ -19,13 +19,16 @@ export default defineComponent({
         let type_block: TypeBlock = <TypeBlock>{}
         type_block.type_name = v.type_name
         type_block.type_icon = v.type_icon
+
+        // 处理icon url
+        Object.entries(v.url_list).forEach(([k, v]) => {
+          v.url_link_icon = 'https://www.google.com/s2/favicons?sz=64&domain=' + v.url_link.split('//')[1]
+        })
+
         // 按点击次数排序
         let url_list_sorted: UrlBlock[] = v.url_list.sort((a, b) => b.url_count - a.url_count)
         type_block.url_list = url_list_sorted.slice(0, frequent_number)
-        // 处理icon url
-        Object.entries(type_block.url_list).forEach(([k, v]) => {
-          v.url_link_icon = 'https://www.google.com/s2/favicons?sz=20&domain=' + v.url_link.split('//')[1]
-        })
+
         url_frequent.push(type_block)
       })
       return url_frequent
@@ -39,13 +42,13 @@ export default defineComponent({
 
 <template>
   <div class="url_frequent">
-    <div class="all_type_block">
-      <div class="one_type_block" v-for="type_block in url_home">
+    <div class="type_block_list">
+      <div class="type_block" v-for="type_block in url_home">
 
         <div class="type_piece">
           <router-link to="/all" class="type_piece_a">
             <div class="type_icon">
-              <img :src="type_block.type_icon" alt="type_icon"/>
+              <img class="type_icon_img" :src="type_block.type_icon" alt="type_icon"/>
             </div>
             <div class="type_name">
               <span class="type_name_span">{{ type_block.type_name }}</span>
@@ -57,7 +60,7 @@ export default defineComponent({
           <div class="url_piece" v-for="url_block in type_block.url_list">
             <a class="url_piece_a" :href="url_block.url_link">
               <div class="url_icon">
-                <img :src="url_block.url_link_icon" alt="url_icon"/>
+                <img class="url_icon_img" :src="url_block.url_link_icon" alt="url_icon"/>
               </div>
               <div class="url_name">
                 <span class="url_name_span">{{ url_block.url_name }}</span>
@@ -65,6 +68,7 @@ export default defineComponent({
             </a>
           </div>
         </div>
+
       </div>
     </div>
   </div>

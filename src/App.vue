@@ -21,8 +21,6 @@ export default {
 </script>
 
 <template>
-  宽：{{ windowWidth }}
-  高：{{ windowHeight }}
   <router-view></router-view>
 </template>
 
